@@ -1,0 +1,4 @@
+#site.hi:
+#    path: /hi/
+#    defaults:
+#        _controller: SiteBundle:Default:welcome
