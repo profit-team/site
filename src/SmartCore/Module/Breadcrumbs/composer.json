@@ -1,0 +1,8 @@
+{
+    "name": "smart-core/module-breadcrumbs",
+    "autoload": {
+        "psr-4": {
+            "SmartCore\\Module\\Breadcrumbs\\": ""
+        }
+    }
+}

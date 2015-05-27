@@ -1,0 +1,12 @@
+
+smart_module.gallery:
+    path: /
+    defaults:
+        _controller: GalleryModule:Gallery:index
+
+smart_module.gallery.album:
+    path: /{id}/
+    defaults:
+        _controller: GalleryModule:Gallery:album
+    requirements:
+        id: \d+

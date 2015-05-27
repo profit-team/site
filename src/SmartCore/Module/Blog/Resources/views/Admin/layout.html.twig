@@ -1,0 +1,14 @@
+{% extends '@CMS/Admin/module.html.twig' %}
+
+{% block title %} {{ 'Blog'|trans }} / {{ parent() }} {% endblock %}
+
+{% set page_header = 'Blog (@DEPRECATED - В будущем использовать Unicat)'|trans %}
+{% set page_description = 'Module'|trans %}
+
+{% block nav %}
+    {{ knp_menu_render('BlogModule:AdminMenu:main', {
+            'currentClass': 'active',
+            'clear_matcher': false,
+        })
+    }}
+{% endblock nav %}
