@@ -1,0 +1,22 @@
+{% extends '@Site/_layout.html.twig' %}
+
+{% block content %}
+
+    <!-- Page Title -->
+    <div class="section section-breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{{ cms_current_folder() }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            {{ content }}
+        </div>
+    </div>
+
+{% endblock content %}
