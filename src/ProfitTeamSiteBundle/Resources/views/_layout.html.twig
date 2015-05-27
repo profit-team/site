@@ -1,0 +1,170 @@
+{% extends '@Html/base.html.twig' %}
+
+{% set use_libs = {
+'bootstrap': '3.3.4',
+} %}
+
+{% block title %}{{ cms_html_title() }}{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+    <style media="all" type="text/css">
+        @import url({{ asset('bundles/cms/css/bootstrap-theme-smart-core.css') }});
+        {#@import url({{ asset('bundles/felib/bootstrap/2.3.2/css/bootstrap-responsive.min.css') }});#}
+        {#@import url({{ asset('bundles/site/css/screen.css') }});#}
+    </style>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{{ asset('bundles/site/css/icomoon-social.css') }}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{{ asset('bundles/site/css/leaflet.css') }}" />
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="{{ asset('bundles/site/css/leaflet.ie.css') }}" />
+    <![endif]-->
+    <link rel="stylesheet" href="{{ asset('bundles/site/css/main.css') }}">
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/site/js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+    {% block header %}
+        <!-- Navigation & Logo-->
+        <div class="mainmenu-wrapper">
+            <div class="container">
+
+                <div class="menuextras">
+                    <div class="extras">
+                        <ul>
+                            {#
+                            <li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="#page-shopping-cart.html"><b>3 items</b></a></li>
+                            <li>
+                                <div class="dropdown choose-country">
+                                    <a class="#" data-toggle="dropdown" href="#"><img src="{{ asset('bundles/site/img/flags/gb.png') }}" alt="Great Britain"> UK</a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li role="menuitem"><a href="#"><img src="{{ asset('bundles/site/img/flags/us.png') }}" alt="United States"> US</a></li>
+                                        <li role="menuitem"><a href="#"><img src="{{ asset('bundles/site/img/flags/de.png') }}" alt="Germany"> DE</a></li>
+                                        <li role="menuitem"><a href="#"><img src="{{ asset('bundles/site/img/flags/es.png') }}" alt="Spain"> ES</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            #}
+                            <li><a href="#page-login.html">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <nav id="mainmenu" class="mainmenu">
+
+                        <div style="margin-top: 14px; margin-right: 30px; font-size: 40px; font-weight: bold; float: left;">
+                            <a href="{{ app.request.basePath }}" style="color: #000000;;">Profit Team</a>
+                        </div>
+                        {#<img src="{{ asset('bundles/site/img/mPurpose-logo.png') }}" alt="Multipurpose Twitter Bootstrap Template">#}
+
+
+                    {{ main_menu }}
+
+                    {#<ul>#}
+                        {#<li class="logo-wrapper">#}
+                            {#<a href="{{ app.request.basePath }}">#}
+                                {#<h1>Profit Team</h1>#}
+                                {#<img src="{{ asset('bundles/site/img/mPurpose-logo.png') }}" alt="Multipurpose Twitter Bootstrap Template">#}
+                            {#</a>#}
+                        {#</li>#}
+
+                        {#
+                        <li class="active">
+                            <a href="{{ app.request.basePath }}">Главная</a>
+                        </li>
+                        <li>
+                            <a href="#features.html">Информация</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#">Новости</a>
+                        </li>
+                        <li>
+                            <a href="#credits.html">Контакты</a>
+                        </li>
+                        #}
+                    {#</ul>#}
+
+
+
+                </nav>
+            </div>
+        </div>
+    {% endblock header %}
+
+    {% include '@SmartCore/flash_messages.html.twig' %}
+
+    <div id="content">
+
+        {% block content content %}
+    </div>
+
+    {% block footer %}
+        <!-- Footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-footer col-md-3 col-xs-6">
+                        <h3>Последние работы</h3>
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <a href="#page-portfolio-item.html"><img src="{{ asset('bundles/site/img/portfolio6.jpg') }}" alt="Project Name"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-footer col-md-3 col-xs-6">
+                        <h3>Навигация</h3>
+                        <ul class="no-list-style footer-navigate-section">
+                            <li><a href="#page-blog-posts.html">Блог</a></li>
+                            <li><a href="#page-portfolio-3-columns-2.html">Потфолио</a></li>
+                            {#<li><a href="#page-products-3-columns.html">eShop</a></li>#}
+                            <li><a href="#page-services-3-columns.html">Услуги</a></li>
+                            <li><a href="#page-pricing.html">Цены</a></li>
+                            <li><a href="#page-faq.html">О нас</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-footer col-md-4 col-xs-6">
+                        <h3>Контакты</h3>
+                        <p class="contact-us-details">
+                            <b>Address:</b> 123 Fake Street, LN1 2ST, London, United Kingdom<br/>
+                            <b>Phone:</b> +44 123 654321<br/>
+                            <b>Fax:</b> +44 123 654321<br/>
+                            <b>Email:</b> <a href="mailto:getintoutch@yourcompanydomain.com">getintoutch@yourcompanydomain.com</a>
+                        </p>
+                    </div>
+                    <div class="col-footer col-md-2 col-xs-6">
+                        <h3>Мы в онлайне</h3>
+                        <ul class="footer-stay-connected no-list-style">
+                            <li><a href="#" class="facebook"></a></li>
+                            <li><a href="#" class="twitter"></a></li>
+                            <li><a href="#" class="googleplus"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-copyright">&copy; 2015 Profit Team. All rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock footer %}
+
+{% endblock body %}
+
+{% block body_js %}
+    {{ parent() }}
+    <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js') }}"></script>
+    <script src="{{ asset('bundles/site/js/jquery.fitvids.js') }}"></script>
+    <script src="{{ asset('bundles/site/js/jquery.sequence-min.js') }}"></script>
+    <script src="{{ asset('bundles/site/js/jquery.bxslider.js') }}"></script>
+    {#<script src="{{ asset('bundles/site/js/main-menu.js') }}"></script>#}
+    <script src="{{ asset('bundles/site/js/template.js') }}"></script>
+{% endblock body_js %}
