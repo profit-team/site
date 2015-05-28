@@ -1203,7 +1203,7 @@ Sequence also relies on the following open source scripts:
 		//Autoplay Settings
 		autoPlay: false, //Cause Sequence to automatically change between frames over a period of time, as defined in autoPlayDelay
 		autoPlayDirection: 1, //The direction in which Sequence should auto play
-		autoPlayDelay: 5000, //The duration in milliseconds at which frames should remain on screen before animating to the next
+		autoPlayDelay: 10000, //The duration in milliseconds at which frames should remain on screen before animating to the next
 
 		//Frame Skipping Settings
 		navigationSkip: true, //Whether the user can navigate through frames before each frame has finished animating
