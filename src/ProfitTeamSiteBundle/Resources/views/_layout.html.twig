@@ -65,7 +65,13 @@
                                 </div>
                             </li>
                             #}
-                            <li><a href="#page-login.html">Login</a></li>
+                            <li>
+                                {% if is_granted('ROLE_USER') %}
+                                    <a href="{{ path('fos_user_profile_show') }}">My profile</a>
+                                {% else %}
+                                    <a href="{{ path('fos_user_profile_show') }}">Login</a>
+                                {% endif %}
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -143,22 +149,11 @@
 
                     <div class="col-footer col-md-4 col-xs-6">
                         <h3>Контакты</h3>
-                        <p class="contact-us-details">
-
-                            <b>Всеволод Соболев:</b> <a href="skype:sevasobolev?chat"><img src="{{ asset('bundles/site/img/skype_2013.png') }}" width="20" />sevasobolev</a><br/>
-                            {#<b>Address:</b> 123 Fake Street, LN1 2ST, London, United Kingdom<br/>#}
-                            {#<b>Phone:</b> +44 123 654321<br/>#}
-                            {#<b>Fax:</b> +44 123 654321<br/>#}
-                            {#<b>Email:</b> <a href="mailto:getintoutch@yourcompanydomain.com">getintoutch@yourcompanydomain.com</a>#}
-                        </p>
+                        {{ footer_contacts }}
                     </div>
                     <div class="col-footer col-md-2 col-xs-6">
                         <h3>Мы в онлайне</h3>
-                        <ul class="footer-stay-connected no-list-style">
-                            <li><a href="#" class="facebook"></a></li>
-                            <li><a href="#" class="twitter"></a></li>
-                            <li><a href="#" class="googleplus"></a></li>
-                        </ul>
+                        {{ footer_socials }}
                     </div>
                 </div>
                 <div class="row">

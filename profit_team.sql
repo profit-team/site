@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost:3306
--- Время создания: Май 28 2015 г., 02:52
+-- Время создания: Май 30 2015 г., 20:25
 -- Версия сервера: 5.6.13
 -- Версия PHP: 5.6.9
 
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `engine_folders` (
   KEY `IDX_6C047E641B5771DD` (`is_active`),
   KEY `IDX_6C047E64FD07C8FB` (`is_deleted`),
   KEY `IDX_6C047E64462CE4F5` (`position`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `engine_folders`
@@ -220,7 +220,8 @@ INSERT INTO `engine_folders` (`id`, `folder_pid`, `title`, `uri_part`, `is_file`
 (1, NULL, 'Главная', NULL, 0, 'a:0:{}', NULL, NULL, 'N;', 'N;', 'index', 'main', 1, 0, '2015-05-28 00:57:27', NULL, NULL, 0, 1),
 (2, 1, 'Информация', 'info', 0, 'a:0:{}', NULL, NULL, 'N;', 'N;', NULL, NULL, 1, 0, '2015-05-28 01:49:17', NULL, NULL, 0, 1),
 (3, 1, 'Новости', 'news', 0, 'a:0:{}', NULL, NULL, 'N;', 'N;', NULL, NULL, 1, 0, '2015-05-28 01:49:28', NULL, NULL, 0, 1),
-(4, 1, 'Контакты', 'contacts', 0, 'a:0:{}', NULL, NULL, 'N;', 'N;', NULL, NULL, 1, 0, '2015-05-28 01:49:42', NULL, NULL, 0, 1);
+(4, 1, 'Контакты', 'contacts', 0, 'a:0:{}', NULL, NULL, 'N;', 'N;', NULL, NULL, 1, 0, '2015-05-28 01:49:42', NULL, NULL, 0, 1),
+(5, 1, 'Аккаунт пользователя', 'user', 0, 'a:0:{}', NULL, 7, 'N;', 'N;', NULL, NULL, 1, 0, '2015-05-30 20:18:54', NULL, NULL, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -279,7 +280,7 @@ CREATE TABLE IF NOT EXISTS `engine_nodes` (
   KEY `IDX_3055D1B7FD07C8FB` (`is_deleted`),
   KEY `IDX_3055D1B7462CE4F5` (`position`),
   KEY `IDX_3055D1B7C242628` (`module`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `engine_nodes`
@@ -288,7 +289,11 @@ CREATE TABLE IF NOT EXISTS `engine_nodes` (
 INSERT INTO `engine_nodes` (`id`, `folder_id`, `region_id`, `controls_in_toolbar`, `module`, `params`, `template`, `priority`, `is_cached`, `is_active`, `is_deleted`, `created_at`, `deleted_at`, `description`, `position`, `user_id`, `is_use_eip`) VALUES
 (1, 1, 2, 1, 'Menu', 'a:5:{s:5:"depth";N;s:9:"css_class";N;s:13:"current_class";s:6:"active";s:20:"selected_inheritance";b:0;s:8:"group_id";i:1;}', NULL, 0, 0, 1, 0, '2015-05-28 01:52:05', NULL, NULL, 0, 1, 0),
 (2, 2, 1, 1, 'Texter', 'a:2:{s:12:"text_item_id";i:1;s:6:"editor";b:1;}', NULL, 0, 0, 1, 0, '2015-05-28 02:47:36', NULL, NULL, 0, 1, 1),
-(3, 4, 1, 1, 'Texter', 'a:2:{s:12:"text_item_id";i:2;s:6:"editor";b:1;}', NULL, 0, 0, 1, 0, '2015-05-28 02:48:12', NULL, NULL, 0, 1, 1);
+(3, 4, 1, 1, 'Texter', 'a:2:{s:12:"text_item_id";i:2;s:6:"editor";b:1;}', NULL, 0, 0, 1, 0, '2015-05-28 02:48:12', NULL, NULL, 0, 1, 1),
+(4, 1, 3, 1, 'Texter', 'a:2:{s:12:"text_item_id";i:3;s:6:"editor";b:0;}', NULL, 0, 0, 1, 0, '2015-05-30 20:03:59', NULL, 'Слайдер на главной', 0, 1, 1),
+(5, 1, 4, 0, 'Texter', 'a:2:{s:12:"text_item_id";i:4;s:6:"editor";b:1;}', NULL, 0, 0, 1, 0, '2015-05-30 20:13:55', NULL, 'Контакты в футере', 0, 1, 1),
+(6, 1, 5, 0, 'Texter', 'a:2:{s:12:"text_item_id";i:5;s:6:"editor";b:0;}', NULL, 0, 0, 1, 0, '2015-05-30 20:15:33', NULL, 'Социальные кнопки в футере', 0, 1, 1),
+(7, 5, 1, 0, 'User', 'a:2:{s:18:"allow_registration";b:1;s:24:"allow_password_resetting";b:1;}', NULL, 0, 0, 1, 0, '2015-05-30 20:19:08', NULL, NULL, 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -307,7 +312,7 @@ CREATE TABLE IF NOT EXISTS `engine_regions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_3054D4985E237E06` (`name`),
   KEY `IDX_3054D498462CE4F5` (`position`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `engine_regions`
@@ -315,7 +320,10 @@ CREATE TABLE IF NOT EXISTS `engine_regions` (
 
 INSERT INTO `engine_regions` (`id`, `name`, `created_at`, `description`, `position`, `user_id`) VALUES
 (1, 'content', '2015-05-28 01:50:27', 'Content workspace', 0, 1),
-(2, 'main_menu', '2015-05-28 01:50:33', 'Главное меню', 0, 1);
+(2, 'main_menu', '2015-05-28 01:50:33', 'Главное меню', 0, 1),
+(3, 'homepage_slider', '2015-05-30 20:01:56', 'Слайдер на главной', 0, 1),
+(4, 'footer_contacts', '2015-05-30 20:13:11', 'Контакты в футере', 0, 1),
+(5, 'footer_socials', '2015-05-30 20:15:25', 'Социальные кнопки в футере', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -337,7 +345,9 @@ CREATE TABLE IF NOT EXISTS `engine_regions_inherit` (
 --
 
 INSERT INTO `engine_regions_inherit` (`region_id`, `folder_id`) VALUES
-(2, 1);
+(2, 1),
+(4, 1),
+(5, 1);
 
 -- --------------------------------------------------------
 
@@ -847,7 +857,7 @@ CREATE TABLE IF NOT EXISTS `texter` (
   `text` longtext COLLATE utf8_unicode_ci,
   `user_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `texter`
@@ -855,7 +865,10 @@ CREATE TABLE IF NOT EXISTS `texter` (
 
 INSERT INTO `texter` (`id`, `locale`, `editor`, `meta`, `created_at`, `updated_at`, `text`, `user_id`) VALUES
 (1, 'ru', 1, 'a:0:{}', '2015-05-28 02:47:36', NULL, '<p>\r\n  Наш сайт создан для объединения знаний и навыков всех желающих найти оплачиваемую работу. Проект для совместного поиска вакансий и выполнения\r\n  работы. Условия сотрудничества равноправные, бюджеты вакансий будут открытыми. Чем больше присоединится желающих, тем шире область наших знаний и\r\n  соответственно возможностей. В идеале требуется дойти до уровня, когда каждый участник сможет развивать свои самые сильные стороны в поиске заказов\r\n  или выполнять тот вид работы, в котором является профессионалом.\r\n</p>\r\n<p>\r\n  У каждого человека есть свои сильные стороны. К сожалению не всем удаётся попасть в нужную среду, максимально реализовать весь свой потенциал и\r\n  посвятить себя любимому делу. Только вместе мы способны расчитывать на спокойное и качественное решение любой задачи. Приглашаем к сотрудничеству\r\n  всех желающих!\r\n</p>\r', 1),
-(2, 'ru', 1, 'a:0:{}', '2015-05-28 02:48:12', NULL, 'Скайпы, мыла и т.д. :)\r', 1);
+(2, 'ru', 1, 'a:0:{}', '2015-05-28 02:48:12', NULL, 'Скайпы, мыла и т.д. :)\r', 1),
+(3, 'ru', 0, 'a:0:{}', '2015-05-30 20:03:59', NULL, '<div id="sequence">\r\n  <ul class="sequence-canvas">\r\n    <!-- Slide 1 -->\r\n    <li class="_bg4" style="background-image: url(/bundles/site/img/homepage-slider/slider-bg4.jpg);">\r\n      <!-- Slide Title -->\r\n      <h2 class="title">Профессиональная разработка сайтов</h2>\r\n      <!-- Slide Text -->\r\n      <h3 class="subtitle">Фреймворк <strong>Symfony2</strong> и система управления контентом <strong>Smart Core CMS</strong>, высокая скорость, открытый исходный код, модульность и визуальное администрирование.</h3>\r\n      <!-- Slide Image -->\r\n      <img class="slide-img" style="height: 280px !important;" src="/uploads/level.jpg" alt="Level House" />\r\n    </li>\r\n    <!-- End Slide 1 -->\r\n    <!-- Slide 2 -->\r\n\r\n    <li class="bg3">\r\n      <!-- Slide Title -->\r\n      <h2 class="title">Профессиональный дизайн</h2>\r\n      <!-- Slide Text -->\r\n      <h3 class="subtitle">Сайты, логотипы, фирменные стили и полиграфическая продукция. Опыт более 5 лет!</h3>\r\n      <!-- Slide Image -->\r\n      <img class="slide-img" src="/bundles/site/img/homepage-slider/slide2.png" alt="" />\r\n    </li>\r\n    <!-- End Slide 2 -->\r\n\r\n    <!-- Slide 3 -->\r\n    <li class="bg1">\r\n      <!-- Slide Title -->\r\n      <h2 class="title">Десктопные приложения</h2>\r\n      <!-- Slide Text -->\r\n      <h3 class="subtitle">Синхронизация с Вашим сайтом. Применяем языки: C++/C#, MQL4, Haskell, D, Assembler x86 и др.</h3>\r\n      <!-- Slide Image -->\r\n      <img class="slide-img" style="height: 280px !important;" src="/uploads/code.jpg" alt="" />\r\n    </li>\r\n    <!-- End Slide 3 -->\r\n\r\n  </ul>\r\n  <div class="sequence-pagination-wrapper">\r\n    <ul class="sequence-pagination">\r\n      <li>1</li>\r\n      <li>2</li>\r\n      <li>3</li>\r\n    </ul>\r\n  </div>\r\n\r\n</div>', 1),
+(4, 'ru', 1, 'a:0:{}', '2015-05-30 20:13:55', NULL, '<p class="contact-us-details">\r\n  <strong>Всеволод Соболев:</strong> <a href="skype:sevasobolev?chat"><img src="/bundles/site/img/skype_2013.png" alt="" width="20" />sevasobolev</a>\r\n</p>\r', 1),
+(5, 'ru', 0, 'a:0:{}', '2015-05-30 20:15:33', NULL, '<ul class="footer-stay-connected no-list-style">\r\n	<li><a href="#" class="facebook"></a></li>\r\n	<li><a href="#" class="twitter"></a></li>\r\n	<li><a href="#" class="googleplus"></a></li>\r\n</ul>\r\n', 1);
 
 -- --------------------------------------------------------
 
@@ -982,7 +995,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`, `firstname`, `lastname`, `created_at`) VALUES
-(1, 'root', 'root', 'god@mail.ru', 'god@mail.ru', 1, 'pgw08vyu0askg0w0o8scw04sowggkw4', '/QW8IR25lRd9cETEDKZuSxXr+nnv9dus3chP3f83TWGsAeNHBmGc+Q49NTCccy8ndH2x/uNwVDpIzrWG61+eRg==', '2015-05-28 02:02:58', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL, '', '', '2015-05-28 00:12:55');
+(1, 'root', 'root', 'god@mail.ru', 'god@mail.ru', 1, 'pgw08vyu0askg0w0o8scw04sowggkw4', 'qhxGwF4ReWyH549uKCXy8HcRbtsTxgruZ2HihBIE1QkZLLQWE0f1ZI00L33kpMPmF0XzY+gblkZ9PN1PRYFMDw==', '2015-05-30 20:24:52', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL, '', '', '2015-05-28 00:12:55');
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
