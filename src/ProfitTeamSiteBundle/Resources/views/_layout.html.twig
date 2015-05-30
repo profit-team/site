@@ -69,7 +69,7 @@
                                 {% if is_granted('ROLE_USER') %}
                                     <a href="{{ path('fos_user_profile_show') }}">My profile</a>
                                 {% else %}
-                                    <a href="{{ path('fos_user_profile_show') }}">Login</a>
+                                    <a href="{{ path('fos_user_registration_register') }}">Register</a>&nbsp;&nbsp;or&nbsp;&nbsp;<a href="{{ path('fos_user_profile_show') }}">Login</a>
                                 {% endif %}
                             </li>
                         </ul>
