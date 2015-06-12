@@ -114,12 +114,58 @@ class AdminController extends Controller
      */
     protected function getPhpSettings()
     {
+        $accelerators = '';
+
+        if (function_exists('apc_store') && ini_get('apc.enabled')) {
+            $accelerators = 'APC';
+        }
+
+        if (extension_loaded('wincache') and ini_get('wincache.ocenabled')) {
+            if (!empty($accelerators)) {
+                $accelerators .= ', ';
+            }
+
+            $accelerators .= 'Wincache (opcache)';
+        }
+
+        if (extension_loaded('wincache') and ini_get('wincache.ucenabled')) {
+            if (!empty($accelerators)) {
+                $accelerators .= ', ';
+            }
+
+            $accelerators .= 'Wincache (usercache)';
+        }
+
+        if (function_exists('xcache_set') and (int) ini_get('xcache.var_size') > 0) {
+            if (!empty($accelerators)) {
+                $accelerators .= ', ';
+            }
+
+            $accelerators .= 'xcache';
+        }
+
+        if (extension_loaded('Zend OPcache') and ini_get('opcache.enable')) {
+            if (!empty($accelerators)) {
+                $accelerators .= ', ';
+            }
+
+            $accelerators .= 'Zend OPcache';
+        }
+
         $data = [];
         $data[] = [
             'title' => 'PHP Version',
             'value' => phpversion().' ('.php_uname('m').')',
             'required' => '5.4.1',
             'recomended' => '5.5.9+',
+            'hint' => '',
+            'warning' => 0,
+        ];
+        $data[] = [
+            'title' => 'PHP Accelerators',
+            'value' => $accelerators,
+            'required' => '',
+            'recomended' => 'APCu, Zend OPcache, Wincache',
             'hint' => '',
             'warning' => 0,
         ];
@@ -184,6 +230,14 @@ class AdminController extends Controller
             'value' => ini_get('upload_max_filesize'),
             'required' => '4M',
             'recomended' => '20M',
+            'hint' => '',
+            'warning' => 0,
+        ];
+        $data[] = [
+            'title' => 'Server time',
+            'value' => (new \DateTime())->format('Y-m-d H:i:s').' ('.ini_get('date.timezone').')',
+            'required' => '',
+            'recomended' => '',
             'hint' => '',
             'warning' => 0,
         ];
