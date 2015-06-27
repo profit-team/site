@@ -39,26 +39,29 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="service-wrapper">
+                        <img src="{{ asset('images/Step1.png') }}" alt="Step 1"> &nbsp;&nbsp;&nbsp;&nbsp;
                         <img src="{{ asset('bundles/site/img/service-icon/diamond.png') }}" alt="Service 1">
-                        <h3>Aliquam in adipiscing</h3>
-                        <p>Praesent rhoncus mauris ac sollicitudin vehicula. Nam fringilla turpis turpis, at posuere turpis aliquet sit amet condimentum</p>
-                        <a href="#" class="btn">Read more</a>
+                        <h3>Поиск вакансии</h3>
+                        <p>Успешное прохождение собеседования специалистом, который будет постоянно вести диалог с работодателем. </p>
+                        <a href="/find" class="btn">Read more</a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="service-wrapper">
+                        <img src="{{ asset('images/Step2.png') }}" alt="Step 2"> &nbsp;&nbsp;&nbsp;&nbsp;
                         <img src="{{ asset('bundles/site/img/service-icon/ruler.png') }}" alt="Service 2">
-                        <h3>Curabitur mollis</h3>
-                        <p>Suspendisse eget libero mi. Fusce ligula orci, vulputate nec elit ultrices, ornare faucibus orci. Aenean lectus sapien, vehicula</p>
-                        <a href="#" class="btn">Read more</a>
+                        <h3>Разделение работы...</h3>
+                        <p>среди участников, имеющих соответствующий уровню <br> сложности задач рейтинг.</p>
+                        <a href="/diff" class="btn">Read more</a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="service-wrapper">
+                        <img src="{{ asset('images/Step3.png') }}" alt="Step 3"> &nbsp;&nbsp;&nbsp;&nbsp;
                         <img src="{{ asset('bundles/site/img/service-icon/box.png') }}" alt="Service 3">
-                        <h3>Vivamus mattis</h3>
-                        <p>Phasellus posuere et nisl ac commodo. Nulla facilisi. Sed tincidunt bibendum cursus. Aenean vulputate aliquam risus rutrum scelerisque</p>
-                        <a href="#" class="btn">Read more</a>
+                        <h3>Успешное выполнение</h3>
+                        <p>работы и наличие возможностей для конвейерной работы с несколькими работодателями.</p>
+                        <a href="/konv" class="btn">Read more</a>
                     </div>
                 </div>
             </div>
@@ -103,23 +106,33 @@
     <!-- Testimonials -->
     <div class="section">
         <div class="container">
-            <h2>Участники проекта</h2>
+            <h2><p><a href="/members" style="color: #000000">Участники проекта</a></p></h2>
             <div class="row">
                 <!-- Testimonial -->
                 <div class="testimonial col-md-4 col-sm-6">
                     <!-- Author Photo -->
                     <div class="author-photo">
-                        <img src="{{ asset('bundles/site/img/user1.jpg') }}" alt="Author 1">
+                        <!--<img src="{{ asset('bundles/site/img/user1.jpg') }}" alt="Author 1">--><img src="{{ asset('https://freelance.ru/img/avatars/208044.png') }}" alt="Author 1">
                     </div>
                     <div class="testimonial-bubble">
                         <blockquote>
                             <!-- Quote -->
                             <p class="quote">
-                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut."
+                               <!-- "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut." -->
+                               Здравствуйте! 
+                               <br> Работаю уже 5 лет, в том числе есть опыт работы над крупными проектами
+                               <br> Мои профессиональные интересы:
+                               <ol>
+                                   <li>Создание дизайна сайтов</li>
+                                   <li>Создание логотипов и фирменных стилей</li>
+                                   <li>Создание дизайна полиграфической продукции</li>
+                               </ol>
                             </p>
                             <!-- Author Info -->
                             <cite class="author-info">
-                                - Name Surname,<br>Managing Director at <a href="#">Some Company</a>
+                                <!-- - Name Surname,<br>Managing Director at <a href="#">Some Company</a> -->
+                                - Екатерина (catkozyreva),
+                                <br> <a href="https://freelance.ru/catkozyreva" target="_blank">Моё портфолио</a> 
                             </cite>
                         </blockquote>
                         <div class="sprite arrow-speech-bubble"></div>
@@ -128,32 +141,45 @@
                 <!-- End Testimonial -->
                 <div class="testimonial col-md-4 col-sm-6">
                     <div class="author-photo">
-                        <img src="{{ asset('bundles/site/img/user5.jpg') }}" alt="Author 2">
+                       <!-- <img src="{{ asset('bundles/site/img/user5.jpg') }}" alt="Author 2"> --> <img src="{{ asset('http://trend.ourdoc.org/userfiles/imageThumb/133(1).jpg') }}" alt="Author 2">
                     </div>
                     <div class="testimonial-bubble">
                         <blockquote>
                             <p class="quote">
-                                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo."
+                              <!--  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo." --> 
+                              Меня зовут Дмитрий. <br>
+                              Опыт программирования на MQL4 и C++. <br>
+                              В основном использовал эти языки в связке (через dll)
+                              для увеличения скорости работы, тестирования и 
+                              защищённости от взлома торговых стратегий. <br>
+                              Буду рад, если придут специалисты из разных областей 
+                              со своими идеями и опытом.
                             </p>
-                            <cite class="author-info">
-                                - Name Surname,<br>Managing Director at <a href="#">Some Company</a>
-                            </cite>
+                           <!--  <cite class="author-info">
+                               - Name Surname,<br>Managing Director at <a href="#">Some Company</a>
+                            </cite> -->
                         </blockquote>
                         <div class="sprite arrow-speech-bubble"></div>
                     </div>
                 </div>
                 <div class="testimonial col-md-4 col-sm-6">
                     <div class="author-photo">
-                        <img src="{{ asset('bundles/site/img/user2.jpg') }}" alt="Author 3">
+                        <img src="{{ asset('http://trend.ourdoc.org/userfiles/imageThumb/maria.jpg') }}" alt="Author 3">
                     </div>
                     <div class="testimonial-bubble">
                         <blockquote>
                             <p class="quote">
-                                "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                                Мария Борисовна Постнова <br>
+                                Практикующий врач-терапевт. <br>
+                                Понравилась идея создателей сайта. <br>
+                                Надеюсь, что она не ограничится рынком IT вакансий. <br>
+                                Буду рада любому сотрудничеству, в том числе есть большой опыт копирайтера для сайтов медицинской и другой тематики. <br>
+                                ----------------------------  <br>
+                                Мой сайт, <!--<a href="www.ourdoc.org">www.ourdoc.org</a> --><a href="http://www.ourdoc.org">www.ourdoc.org</a>
                             </p>
-                            <cite class="author-info">
+                           <!-- <cite class="author-info">
                                 - Name Surname,<br>Managing Director at <a href="#">Some Company</a>
-                            </cite>
+                            </cite>  -->
                         </blockquote>
                         <div class="sprite arrow-speech-bubble"></div>
                     </div>

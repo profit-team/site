@@ -384,7 +384,7 @@ a:hover {
 +	Call to Action Bar Style
 --------------------------------------------------------------------------*/
 .calltoaction-wrapper {
-  text-align: center;
+  text-align: left;
 }
 .calltoaction-wrapper h3 {
   display: inline-block;
