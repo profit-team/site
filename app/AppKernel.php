@@ -1,9 +1,6 @@
 <?php
 
-require_once __DIR__.'/../src/SmartCore/Bundle/SimpleProfilerBundle/Profiler.php';
-
 use SmartCore\Bundle\CMSBundle\HttpKernel\Kernel;
-use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
@@ -19,6 +16,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
+            new Dizda\CloudBackupBundle\DizdaCloudBackupBundle(),
             //new Abmundi\DatabaseCommandsBundle\AbmundiDatabaseCommandsBundle(), // "abmundi/database-commands-bundle": "dev-master",
             //new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             //new JMS\AopBundle\JMSAopBundle(),
@@ -37,14 +35,5 @@ class AppKernel extends Kernel
         $this->registerSmartCoreCmsBundles($bundles);
 
         return $bundles;
-    }
-
-    /**
-     * @param LoaderInterface $loader
-     * @return void
-     */
-    public function registerContainerConfiguration(LoaderInterface $loader)
-    {
-        $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
 }
