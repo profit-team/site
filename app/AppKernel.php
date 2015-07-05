@@ -11,6 +11,9 @@ class AppKernel extends CMSAppKernel
     //protected $siteName = 'My';
 
     /**
+     * Если требуются, можно зарегистирировать дополнительные бандлы,
+     * но перед return, необходимо вызвать $this->registerSmartCoreCmsBundles($bundles);
+     *
      * @return \Symfony\Component\HttpKernel\Bundle\BundleInterface[]
      */
     public function registerBundles()
@@ -18,6 +21,8 @@ class AppKernel extends CMSAppKernel
         $bundles = array(
             new Dizda\CloudBackupBundle\DizdaCloudBackupBundle(),
             new SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
+            new SmartCore\Bundle\SitemapBundle\SmartSitemapBundle(),
+
             //new Abmundi\DatabaseCommandsBundle\AbmundiDatabaseCommandsBundle(), // "abmundi/database-commands-bundle": "dev-master",
             //new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             //new JMS\AopBundle\JMSAopBundle(),
@@ -30,6 +35,7 @@ class AppKernel extends CMSAppKernel
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Mremi\TemplatingExtraBundle\MremiTemplatingExtraBundle();
+            //$bundles[] = new JMS\DebuggingBundle\JMSDebuggingBundle($this); // "jms/debugging-bundle": "dev-master",
             //$bundles[] = new Alb\TwigReflectionBundle\AlbTwigReflectionBundle(); // "alb/twig-reflection-bundle": "*",
         }
 
