@@ -11,6 +11,8 @@
 /vendor/
 /web/_media/
 /web/bundles/
+/web/forum/
+/web/images/
 /web/uploads/
 /web/sitemap.xml
 composer.phar
