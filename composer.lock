@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a90b1d6df3dc694bf754219d26e689fa",
+    "hash": "1fa1e9b93bf3620401d83873eb9d7126",
     "packages": [
         {
             "name": "asm89/twig-cache-extension",
@@ -3834,16 +3834,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "b287fbbe1ca27847064beff2bad7fb6920bf08cc"
+                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b287fbbe1ca27847064beff2bad7fb6920bf08cc",
-                "reference": "b287fbbe1ca27847064beff2bad7fb6920bf08cc",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/dc5150cc608f2334c72c3b6a553ec9668a4156b0",
+                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0",
                 "shasum": ""
             },
             "require": {
@@ -3880,7 +3880,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14.x-dev"
+                    "dev-master": "1.15.x-dev"
                 }
             },
             "autoload": {
@@ -3906,7 +3906,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-06-19 13:29:54"
+            "time": "2015-07-12 13:54:09"
         },
         {
             "name": "mopa/bootstrap-bundle",
@@ -4787,12 +4787,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Smart-Core/CMSBundle.git",
-                "reference": "603def6811182baa1990159faf7d2c2636349207"
+                "reference": "c365a17811ce76713803f3d393eafa4b66f8d584"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Smart-Core/CMSBundle/zipball/603def6811182baa1990159faf7d2c2636349207",
-                "reference": "603def6811182baa1990159faf7d2c2636349207",
+                "url": "https://api.github.com/repos/Smart-Core/CMSBundle/zipball/c365a17811ce76713803f3d393eafa4b66f8d584",
+                "reference": "c365a17811ce76713803f3d393eafa4b66f8d584",
                 "shasum": ""
             },
             "require": {
@@ -4811,6 +4811,7 @@
                 "happyr/google-site-authenticator-bundle": "*",
                 "happyr/slugify-bundle": "*",
                 "helios-ag/fm-elfinder-bundle": "~4.0",
+                "helios-ag/fm-elfinder-php-connector": "v2.2.1",
                 "incenteev/composer-parameter-handler": "~2.0",
                 "intervention/image": "*",
                 "jms/di-extra-bundle": "*",
@@ -4858,7 +4859,7 @@
                 "cmf",
                 "cms"
             ],
-            "time": "2015-07-08 21:54:17"
+            "time": "2015-07-13 00:00:22"
         },
         {
             "name": "smart-core/cms-generator-bundle",
@@ -5163,12 +5164,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Smart-Core/Module-SimpleNews.git",
-                "reference": "ebfb366d2c62baae6075c0f37e1fbba2178a6f0a"
+                "reference": "adb77b8eedfae44607fed9952c3453e994e04641"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Smart-Core/Module-SimpleNews/zipball/ebfb366d2c62baae6075c0f37e1fbba2178a6f0a",
-                "reference": "ebfb366d2c62baae6075c0f37e1fbba2178a6f0a",
+                "url": "https://api.github.com/repos/Smart-Core/Module-SimpleNews/zipball/adb77b8eedfae44607fed9952c3453e994e04641",
+                "reference": "adb77b8eedfae44607fed9952c3453e994e04641",
                 "shasum": ""
             },
             "require": {
@@ -5181,7 +5182,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2015-07-06 16:11:55"
+            "time": "2015-07-13 00:27:01"
         },
         {
             "name": "smart-core/module-slider",
@@ -5241,12 +5242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Smart-Core/Module-Unicat.git",
-                "reference": "d919eca8438697bc6bfdf2c7b0f6ae28d137b9fb"
+                "reference": "3830b3f0e4dfd7cac69b3569b8c4d411a7959d71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Smart-Core/Module-Unicat/zipball/d919eca8438697bc6bfdf2c7b0f6ae28d137b9fb",
-                "reference": "d919eca8438697bc6bfdf2c7b0f6ae28d137b9fb",
+                "url": "https://api.github.com/repos/Smart-Core/Module-Unicat/zipball/3830b3f0e4dfd7cac69b3569b8c4d411a7959d71",
+                "reference": "3830b3f0e4dfd7cac69b3569b8c4d411a7959d71",
                 "shasum": ""
             },
             "require": {
@@ -5259,7 +5260,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2015-07-08 21:54:17"
+            "time": "2015-07-13 00:27:01"
         },
         {
             "name": "smart-core/module-user",

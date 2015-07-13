@@ -2,9 +2,9 @@
 
 namespace SmartCore\Module\Blog\Controller;
 
+use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Exception\NotValidCurrentPageException;
 use Pagerfanta\Pagerfanta;
-use Smart\CoreBundle\Pagerfanta\SimpleDoctrineORMAdapter;
 use SmartCore\Bundle\CMSBundle\Module\NodeTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -61,7 +61,7 @@ class ArticleController extends Controller
 
         $articleService = $this->getArticleService();
 
-        $pagerfanta = new Pagerfanta(new SimpleDoctrineORMAdapter($articleService->getFindByCategoryQuery()));
+        $pagerfanta = new Pagerfanta(new DoctrineORMAdapter($articleService->getFindByCategoryQuery()));
         $pagerfanta->setMaxPerPage($articleService->getItemsCountPerPage());
 
         try {
@@ -94,7 +94,7 @@ class ArticleController extends Controller
 
         $articleService = $this->getArticleService();
 
-        $pagerfanta = new Pagerfanta(new SimpleDoctrineORMAdapter($articleService->getFindByDateQuery($firstDate, $lastDate)));
+        $pagerfanta = new Pagerfanta(new DoctrineORMAdapter($articleService->getFindByDateQuery($firstDate, $lastDate)));
         $pagerfanta->setMaxPerPage($articleService->getItemsCountPerPage());
 
         try {
@@ -102,6 +102,14 @@ class ArticleController extends Controller
         } catch (NotValidCurrentPageException $e) {
             return $this->redirect($this->generateUrl('smart_blog.article.index'));
         }
+
+        $date_archive = new \DateTime("$year-$month-01");
+
+        $formatter = new \IntlDateFormatter(\Locale::getDefault(), \IntlDateFormatter::NONE, \IntlDateFormatter::NONE);
+        $formatter->setPattern('LLLL YYYY года');
+        $date_archive = $formatter->format($date_archive);
+        $breadchumbs = $this->get('cms.breadcrumbs');
+        $breadchumbs->add('Archive', 'Архив статей за '.$date_archive);
 
         return $this->render('BlogModule:Article:archive_list.html.twig', [
             'pagerfanta' => $pagerfanta,
